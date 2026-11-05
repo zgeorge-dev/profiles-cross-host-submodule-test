@@ -1,0 +1,3 @@
+[submodule "enterprise-child"]
+	path = enterprise-child
+	url = https://github.qualcomm.com/zgeorge/profiles-cross-host-enterprise-fixture.git
