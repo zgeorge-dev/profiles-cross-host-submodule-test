@@ -110,6 +110,7 @@ def verify(repo: Path) -> list[str]:
     )
     expected_skills = (
         (root, repo, "root-control", "ROOT_CONTROL_V1"),
+        (root, repo, "review-ext", "PUBLIC_REVIEW_EXT_V1"),
         (enterprise, child, "enterprise-marker", "ENTERPRISE_MARKER_V1"),
     )
     for data, directory, slug, marker in expected_skills:
@@ -127,7 +128,7 @@ def verify(repo: Path) -> list[str]:
         "PASS: real HTTPS cross-host submodule with a pinned enterprise commit",
         f"PASS: enterprise commit {pin}",
         "PASS: matching root and enterprise profile declarations",
-        "PASS: root control and enterprise marker skills",
+        "PASS: root control, public review, and enterprise marker skills",
         "PASS: tracked symlink to enterprise skill content",
         "PASS: profile deletion disabled in both manifests",
     ]

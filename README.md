@@ -8,8 +8,9 @@ this public repository.
 
 ```text
 github.com/zgeorge-dev/profiles-cross-host-submodule-test
-  qgenie-profile.yaml                     root profile, version 1.1.0
+  qgenie-profile.yaml                     root profile, version 1.1.1
   skills/root-control/SKILL.md            public control skill
+  msw/skills/review-ext/SKILL.md           public Review Ext test skill
   skills/shared-enterprise-marker         tracked relative Git symlink
     -> ../enterprise-child/skills/enterprise-marker
   enterprise-child                       real Git submodule, mode 160000
@@ -53,7 +54,7 @@ Use a disposable DEV/TST profile, not an existing production profile.
 1. Create a root profile:
    - **Name:** `Cross Host Submodule Test`
    - **Slug:** `cross-host-submodule-test`
-   - **Initial registry version:** `1.0.0` (the authored `1.1.0` is newer).
+   - **Initial registry version:** `1.0.0` (the authored `1.1.1` is newer).
 2. Connect its GitHub sync configuration:
    - **Repository:** `https://github.com/zgeorge-dev/profiles-cross-host-submodule-test`
    - **Branch:** `main`
@@ -72,8 +73,9 @@ Use a new disposable profile to avoid version conflicts with earlier test runs.
 
 After a completed, applied sync:
 
-- Root version is `1.1.0`.
+- Root version is `1.1.1`.
 - Root has its authored `root-control` skill with marker `ROOT_CONTROL_V1`.
+- Root has its authored `review-ext` skill with marker `PUBLIC_REVIEW_EXT_V1`.
 - The direct child `cross-host-enterprise-child` exists at version `1.1.0`.
 - The child's `enterprise-marker` skill contains `ENTERPRISE_MARKER_V1`.
 - The root's linked `enterprise-marker` skill contains the same enterprise
@@ -85,6 +87,21 @@ After a completed, applied sync:
 
 Local verification proves fixture structure and developer-account readability,
 not that the deployed registry service account authenticated or applied a sync.
+
+## Public Review Ext submodule content
+
+The skill at `msw/skills/review-ext/SKILL.md` also lets another repository use
+this public repository as a skill provider. For a submodule checked out at
+`vendor/msw-review-stack`, a symlink at `skills/review-ext` can point to:
+
+```text
+../vendor/msw-review-stack/msw/skills/review-ext
+```
+
+That relative target starts from the symlink's containing `skills/` directory.
+The parent must pin a commit containing this skill; pushing a newer provider
+commit alone does not update the parent's submodule pointer. Public access to
+this repository does not grant access to its private enterprise child.
 
 ## Follow-up pinning test
 
