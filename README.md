@@ -11,6 +11,8 @@ github.com/zgeorge-dev/profiles-cross-host-submodule-test
   qgenie-profile.yaml                     root profile, version 1.1.1
   skills/root-control/SKILL.md            public control skill
   msw/skills/review-ext/SKILL.md           public Review Ext test skill
+  skills/review-ext                      tracked relative Git symlink
+    -> ../msw/skills/review-ext
   skills/shared-enterprise-marker         tracked relative Git symlink
     -> ../enterprise-child/skills/enterprise-marker
   enterprise-child                       real Git submodule, mode 160000

@@ -14,7 +14,7 @@ skills:
   - slug: enterprise-marker
     dir: ./skills/shared-enterprise-marker
   - slug: review-ext
-    dir: ./msw/skills/review-ext
+    dir: ./skills/review-ext
 prompts: []
 extensions: []
 documentation:
