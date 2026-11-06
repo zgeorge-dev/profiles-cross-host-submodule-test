@@ -2,7 +2,7 @@ profile:
   slug: cross-host-submodule-test
   name: Cross Host Submodule Test
   description: Synthetic public root with a private enterprise subprofile and linked skill.
-  version: "1.1.1"
+  version: "1.1.2"
   subprofiles:
     - slug: cross-host-enterprise-child
       path: ./enterprise-child
@@ -12,7 +12,7 @@ skills:
   - slug: root-control
     dir: ./skills/root-control
   - slug: enterprise-marker
-    dir: ./skills/shared-enterprise-marker
+    dir: ./skills/enterprise-marker
   - slug: review-ext
     dir: ./skills/review-ext
 prompts: []

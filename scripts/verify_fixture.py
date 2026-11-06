@@ -15,7 +15,7 @@ CHILD_URL = (
     "https://github.qualcomm.com/zgeorge/"
     "profiles-cross-host-enterprise-fixture.git"
 )
-LINK_PATH = "skills/shared-enterprise-marker"
+LINK_PATH = "skills/enterprise-marker"
 LINK_TARGET = "../enterprise-child/skills/enterprise-marker"
 
 
@@ -120,7 +120,7 @@ def verify(repo: Path) -> list[str]:
         check(skill.is_file(), f"Missing skill content: {skill}")
         check(marker in skill.read_text(encoding="utf-8"), f"Missing marker: {marker}")
     check(
-        {"slug": "enterprise-marker", "dir": "./skills/shared-enterprise-marker"}
+        {"slug": "enterprise-marker", "dir": "./skills/enterprise-marker"}
         in root.get("skills", []),
         "Root must declare the cross-host symlinked skill.",
     )

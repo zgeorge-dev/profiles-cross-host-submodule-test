@@ -8,12 +8,12 @@ this public repository.
 
 ```text
 github.com/zgeorge-dev/profiles-cross-host-submodule-test
-  qgenie-profile.yaml                     root profile, version 1.1.1
+  qgenie-profile.yaml                     root profile, version 1.1.2
   skills/root-control/SKILL.md            public control skill
   msw/skills/review-ext/SKILL.md           public Review Ext test skill
   skills/review-ext                      tracked relative Git symlink
     -> ../msw/skills/review-ext
-  skills/shared-enterprise-marker         tracked relative Git symlink
+  skills/enterprise-marker               tracked relative Git symlink
     -> ../enterprise-child/skills/enterprise-marker
   enterprise-child                       real Git submodule, mode 160000
     github.qualcomm.com/zgeorge/profiles-cross-host-enterprise-fixture
@@ -56,7 +56,7 @@ Use a disposable DEV/TST profile, not an existing production profile.
 1. Create a root profile:
    - **Name:** `Cross Host Submodule Test`
    - **Slug:** `cross-host-submodule-test`
-   - **Initial registry version:** `1.0.0` (the authored `1.1.1` is newer).
+   - **Initial registry version:** `1.0.0` (the authored `1.1.2` is newer).
 2. Connect its GitHub sync configuration:
    - **Repository:** `https://github.com/zgeorge-dev/profiles-cross-host-submodule-test`
    - **Branch:** `main`
@@ -75,7 +75,7 @@ Use a new disposable profile to avoid version conflicts with earlier test runs.
 
 After a completed, applied sync:
 
-- Root version is `1.1.1`.
+- Root version is `1.1.2`.
 - Root has its authored `root-control` skill with marker `ROOT_CONTROL_V1`.
 - Root has its authored `review-ext` skill with marker `PUBLIC_REVIEW_EXT_V1`.
 - The direct child `cross-host-enterprise-child` exists at version `1.1.0`.
